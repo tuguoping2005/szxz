@@ -53,8 +53,11 @@
 	<img id="previewImg" src="images/preview.jpg" width="80" height="80" />
 	 <form action="uploadServlet.do" method="post" enctype="multipart/form-data" >
   		请选择图片：<input id="myfile" name="myfile" type="file" />
-  		<input type="submit" value="提交"  />
+  		<input type="submit" value="提交"  />${result }
   	</form>
+  	
+  	下载:<a href="downloadServlet.do?fileName=test.txt">test.txt</a>&nbsp;&nbsp;${errorResult }
+  	
 	<p>
 		<img id="largeImg" src="images/img1-lg.jpg" alt="Large Image" />
 	</p>
