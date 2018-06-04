@@ -1,6 +1,7 @@
 package com.tu.action;
 
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -8,16 +9,20 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class FileUploadAction extends ActionSupport{
-	private File upload;
+	private List<File> upload;
 	private String uploadContentType;
-	private String uploadFileName;
+	private String[] uploadFileName;
 	
 	private String result;
-	public File getUpload() {
+	
+
+	
+
+	public List<File> getUpload() {
 		return upload;
 	}
 
-	public void setUpload(File upload) {
+	public void setUpload(List<File> upload) {
 		this.upload = upload;
 	}
 
@@ -29,12 +34,11 @@ public class FileUploadAction extends ActionSupport{
 		this.uploadContentType = uploadContentType;
 	}
 
-
-	public String getUploadFileName() {
+	public String[] getUploadFileName() {
 		return uploadFileName;
 	}
 
-	public void setUploadFileName(String uploadFileName) {
+	public void setUploadFileName(String[] uploadFileName) {
 		this.uploadFileName = uploadFileName;
 	}
 
@@ -49,15 +53,15 @@ public class FileUploadAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		String path = ServletActionContext.getServletContext().getRealPath("/images");
-		System.out.println(path);
-		System.out.println(uploadContentType);
-		System.out.println(uploadFileName);
 		
 		File file = new File(path);
 		if(!file.exists()){
 			file.mkdirs();
 		}
-		FileUtils.copyFile(upload, new File(file,uploadFileName));
+		
+		for(int i = 0;i<upload.size();i++){
+			FileUtils.copyFile(upload.get(i), new File(file,uploadFileName[i]));
+		}
 		result = "上传成功";
 		
 		return SUCCESS;

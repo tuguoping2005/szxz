@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	
+	<constant name="struts.custom.i18n.resources" value="app"></constant>
 	<package name="default" namespace="/" extends="struts-default">
 	       <action name="upload" class="com.tu.action.FileUploadAction">
 	       		<result>/jsp/03.jsp</result>
@@ -12,7 +12,7 @@
 	       		<result name="input">/jsp/error.jsp</result>
 	       		<interceptor-ref name="fileUpload">
 	       			<param name="allowedTypes">image/bmp,image/img,image/gif,image/png,image/jpeg</param>
-	       			<param name="maximunsize">2M</param>
+	       			<param name="maximumSize">10M</param>
 	       		</interceptor-ref>
 	       		<interceptor-ref name="defaultStack"></interceptor-ref>
 	       </action>
