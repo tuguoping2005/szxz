@@ -29,4 +29,34 @@
     <servlet-name>DownloadServlet</servlet-name>
     <url-pattern>/downloadServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SmartUploadServlet</display-name>
+    <servlet-name>SmartUploadServlet</servlet-name>
+    <servlet-class>com.tu.smartupload.SmartUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmartUploadServlet</servlet-name>
+    <url-pattern>/smartUploadServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SmartDownloadServlet</display-name>
+    <servlet-name>SmartDownloadServlet</servlet-name>
+    <servlet-class>com.tu.smartupload.SmartDownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmartDownloadServlet</servlet-name>
+    <url-pattern>/smartDownloadServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BatchSmartDownload</display-name>
+    <servlet-name>BatchSmartDownload</servlet-name>
+    <servlet-class>com.tu.smartupload.BatchSmartDownload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BatchSmartDownload</servlet-name>
+    <url-pattern>/batchSmartDownload.do</url-pattern>
+  </servlet-mapping>
 </web-app>
