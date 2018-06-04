@@ -30,14 +30,8 @@
 </head>
 
 <body>
-	<h2>文件上传</h2>
-	<form action="upload" method="post"
-		enctype="multipart/form-data">
-		上传文件1:<input type="file" name="upload" /><br>
-		
-		<input type="submit" value="提交" /><br>${result }
-	</form>
-	 
+	<h2>文件下载</h2>
+	下载:<a href="downloadAction?fileName=img1-lg.jpg">下载</a>
 	 <hr/>
 	<p>
 		<img id="largeImg" src="images/img1-lg.jpg" alt="Large Image" />
